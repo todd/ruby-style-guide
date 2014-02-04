@@ -419,8 +419,6 @@ as easy to spot as regular comments.
     # another comment line
     ```
     
-    TODO: Continue editing from here.
-
 ## Syntax
 
 * Use `::` only to reference constants(this includes classes and
@@ -559,11 +557,6 @@ Never use `::` for regular method invocation.
 
 * Never use `if x; ...`. Use the ternary operator instead.
 
-* Use `when x then ...` for one-line cases. The alternative syntax
-  `when x: ...` has been removed as of Ruby 1.9.
-
-* Never use `when x; ...`. See the previous rule.
-
 * Use `!` instead of `not`.
 
     ```Ruby
@@ -636,6 +629,7 @@ Never use `::` for regular method invocation.
     some_condition && do_something
     ```
 
+TODO: Reach consensus on how to use `unless`
 * Favor `unless` over `if` for negative conditions (or control
   flow `||`).
 
@@ -747,6 +741,7 @@ Never use `::` for regular method invocation.
    end
    ```
 
+TODO: Where did we land on using parentheses for methods?
 * Omit parentheses around parameters for methods that are part of an
   internal DSL (e.g. Rake, Rails, RSpec), methods that have
   "keyword" status in Ruby (e.g. `attr_reader`, `puts`) and attribute
@@ -840,6 +835,7 @@ Never use `::` for regular method invocation.
     ask themselves - is this code really readable and can the blocks' contents be extracted into
     nifty methods?
 
+TODO: Pick up team discussion here.
 * Consider using explicit block argument to avoid writing block
   literal that just passes its arguments to another block. Beware of
   the performance impact, though, as the block gets converted to a
