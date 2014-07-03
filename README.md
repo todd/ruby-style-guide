@@ -988,6 +988,8 @@ would happen if the current value happened to be `false`.)
     # better
     something &&= something.downcase
     ```
+    
+    **OpenTable note: avoid this as it's cryptic at best.**
 
 * Avoid explicit use of the case equality operator `===`. As its name
   implies it is meant to be used implicitly by `case` expressions and
@@ -1217,6 +1219,8 @@ setting the warn level to 0 via `-W0`).
     ```
 
 * Avoid the use of flip-flops.
+
+* Don't wear flip-flops unless you are at the beach or showering in prison.
 
 * Avoid use of nested conditionals for flow of control.
   Prefer a guard clause when you can assert invalid data. A guard clause is a conditional
