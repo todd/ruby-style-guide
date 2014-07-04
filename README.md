@@ -141,13 +141,13 @@ This document started life as the guide developed and maintained by [bbatsov](ht
     # good - no space after { and before }
     {one: 1, two: 2}
     ```
-    
+
     Interpolated expressions also receive the same treatment as hashes.
 
     ```Ruby
     # bad
     "string#{ expr }"
-    
+
     # good - no spaces
     "string#{expr}"
     ```
@@ -199,7 +199,7 @@ This document started life as the guide developed and maintained by [bbatsov](ht
     end
     ```
 
-* When assigning the result of a conditional expression to a variable, preserve the usual alignment of its branches. 
+* When assigning the result of a conditional expression to a variable, preserve the usual alignment of its branches.
 	* Never assign the output of an `if` statement to a variable (single line `if` statements are the exception).
 	* Never use `then` in `case` statements. Always put the condition on one line and the return on the next.
 
@@ -382,7 +382,7 @@ mail = Mailer.deliver(
     menu_item =
       ['Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam',
        'Baked beans', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam']
-    
+
     # good
     menu_item = [
       'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam', 'Spam',
@@ -418,7 +418,7 @@ as easy to spot as regular comments.
     # comment line
     # another comment line
     ```
-    
+
 ## Syntax
 
 * Use `::` only to reference constants(this includes classes and
@@ -835,7 +835,6 @@ TODO: Where did we land on using parentheses for methods?
     ask themselves - is this code really readable and can the blocks' contents be extracted into
     nifty methods?
 
-TODO: Pick up team discussion here.
 * Consider using explicit block argument to avoid writing block
   literal that just passes its arguments to another block. Beware of
   the performance impact, though, as the block gets converted to a
@@ -988,7 +987,7 @@ would happen if the current value happened to be `false`.)
     # better
     something &&= something.downcase
     ```
-    
+
     **OpenTable note: avoid this as it's cryptic at best.**
 
 * Avoid explicit use of the case equality operator `===`. As its name
@@ -1430,6 +1429,8 @@ setting the warn level to 0 via `-W0`).
     # good
     array.reverse_each { ... }
     ```
+
+TODO: Pick up team discussion here.
 
 ## Comments
 
