@@ -205,6 +205,7 @@ This document started life as the guide developed and maintained by [bbatsov](ht
 
     ```Ruby
     # bad - pretty convoluted
+    # Todd Note: Not sure how I feel about drawing a line in the sand on this one, but it also doesn't feel idiomatic.
     kind = case year
     when 1850..1889 then 'Blues'
     when 1890..1909 then 'Ragtime'
@@ -283,6 +284,7 @@ This document started life as the guide developed and maintained by [bbatsov](ht
     end
 
     # good
+    # Todd Note: Do we want to start using kwargs as a best practice?
     def some_method(arg1 = :default, arg2 = nil, arg3 = [])
       # do something...
     end
@@ -337,6 +339,7 @@ This document started life as the guide developed and maintained by [bbatsov](ht
     end
 
     # good (normal indent)
+    # Todd Note: Align value spacing?
     def send_mail(source)
       Mailer.deliver(
         to: 'bob@example.com',
@@ -742,6 +745,7 @@ TODO: Reach consensus on how to use `unless`
    ```
 
 TODO: Where did we land on using parentheses for methods?
+Todd Note: I don't even remember what the issue was here.
 * Omit parentheses around parameters for methods that are part of an
   internal DSL (e.g. Rake, Rails, RSpec), methods that have
   "keyword" status in Ruby (e.g. `attr_reader`, `puts`) and attribute
@@ -989,6 +993,7 @@ would happen if the current value happened to be `false`.)
     ```
 
     **OpenTable note: avoid this as it's cryptic at best.**
+    Todd Note: I actually kind of like this now.
 
 * Avoid explicit use of the case equality operator `===`. As its name
   implies it is meant to be used implicitly by `case` expressions and
@@ -1337,6 +1342,9 @@ setting the warn level to 0 via `-W0`).
   should end in a question mark.
   (i.e. `Array#empty?`). Methods that don't return a boolean, shouldn't
   end in a question mark.
+
+Todd Note: Predicates shouldn't be assumed to necessarily return boolean singletons. Conventional Ruby assumes truthy/falsy values for predicate functions.
+
 * The names of potentially *dangerous* methods (i.e. methods that
   modify `self` or the arguments, `exit!` (doesn't run the finalizers
   like `exit` does), etc.) should end with an exclamation mark if
@@ -1404,6 +1412,8 @@ setting the warn level to 0 via `-W0`).
   Smalltalk and are not common in other programming languages. The
   reason the use of `select` is encouraged over `find_all` is that it
   goes together nicely with `reject` and its name is pretty self-explanatory.
+
+Todd Note: Not sure I agree with favoring `#reduce` over `#inject`. Mostly personal preference.
 
 * Use `flat_map` instead of `map` + `flatten`.
   This does not apply for arrays with a depth greater than 2, i.e.
